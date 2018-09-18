@@ -1,6 +1,6 @@
 
 import { layout,main } from 'Styles/Layouts.less';
-import { Left,Right,Header } from 'Components/layouts';
+import { Left,Right,Header } from 'Components/Layouts';
 
 
 function BasicLayout({children,location:{pathname}}) {
