@@ -1,10 +1,25 @@
-import styles from './index.css';
 
-function BasicLayout(props) {
+import { layout,main } from 'Styles/Layouts.less';
+import { Left,Right,Header } from 'Components/layouts';
+
+
+function BasicLayout({children,location:{pathname}}) {
+  if(pathname === '/login'){
+    return (
+      <div className={layout}>
+        { children }
+      </div>
+    );
+  }
   return (
-    <div className={styles.normal}>
-      <h1 className={styles.title}>Yay! Welcome to umi!</h1>
-      { props.children }
+    <div>
+      <Left/>
+      <Right>
+        <Header/>
+        <div className={main}>
+          { children }
+        </div>
+      </Right>
     </div>
   );
 }
